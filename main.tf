@@ -12,3 +12,7 @@ terraform {
 provider "aws" {
   region = local.region
 }
+
+module "jenkins_server" {
+  source = "./modules/ecs"
+}
