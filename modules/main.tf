@@ -26,8 +26,8 @@ resource "aws_ecs_task_definition" "service" {
   ])
 
   volume {
-    name      = "service-storage"
-    host_path = "/ecs/service-storage"
+    name      = "jenkins_home"
+    host_path = "/var/jenkins_home jenkins/jenkins:lts-jdk11"
   }
 
 }
