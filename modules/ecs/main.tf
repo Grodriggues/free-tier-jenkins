@@ -30,7 +30,7 @@ resource "aws_ecs_task_definition" "service" {
     host_path = "/var/jenkins_home jenkins/jenkins:lts-jdk11"
   }
 
-  
+
 
 }
 
