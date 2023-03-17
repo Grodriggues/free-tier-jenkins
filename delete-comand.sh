@@ -1,0 +1,1 @@
+aws ecs deregister-container-instance --cluster jenkins-server --container-instance 4883794fd9554f9bae8bc159bfce6434 --force
