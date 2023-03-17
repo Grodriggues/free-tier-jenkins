@@ -71,9 +71,10 @@ resource "aws_instance" "ecs_server" {
   instance_type   = "t2.micro"
   security_groups = [aws_security_group.sg.name]
   key_name        = "jenkins"
+  iam_instance_profile = aws_iam_instance_profile.instance_profile.name
 
   tags = {
-    Name = "HelloWorld"
+    Name = "jenkins-server"
   }
 
   user_data = <<EOF
