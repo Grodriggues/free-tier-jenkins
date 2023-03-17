@@ -13,6 +13,14 @@ provider "aws" {
   region = local.region
 }
 
+module "ec2_machine" {
+  source = "./modules/ec2"
+}
+
+
 module "jenkins_server" {
+  depends_on = [
+    module.ec2_machine
+  ]
   source = "./modules/ecs"
 }
