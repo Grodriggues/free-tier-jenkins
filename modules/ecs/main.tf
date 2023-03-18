@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "service" {
   container_definitions = jsonencode([
     {
       name      = "jenkins"
-      image     = "jenkins/jenkins"
+      image     = "jenkins/jenkins"                                                      
       cpu       = 10
       memory    = 512
       essential = true
@@ -27,11 +27,8 @@ resource "aws_ecs_task_definition" "service" {
 
   volume {
     name      = "jenkins_home"
-    host_path = "/var/jenkins_home jenkins/jenkins:lts-jdk11"
+    host_path = "/var/jenkins_home"
   }
-
-
-
 }
 
 resource "aws_ecs_service" "mongo" {

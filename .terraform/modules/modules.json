@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"ec2_machine","Source":"./modules/ec2","Dir":"modules/ec2"},{"Key":"","Source":"","Dir":"."},{"Key":"jenkins_server","Source":"./modules/ecs","Dir":"modules/ecs"}]}
