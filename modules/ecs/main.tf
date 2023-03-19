@@ -7,11 +7,12 @@ resource "aws_ecs_task_definition" "service" {
   family = "service"
   container_definitions = jsonencode([
     {
-      name      = "jenkins"
-      image     = "jenkins/jenkins"                                                      
-      cpu       = 10
-      memory    = 512
-      essential = true
+      name       = "jenkins"
+      image      = "jenkins/jenkins"
+      cpu        = 10
+      memory     = 512
+      essential  = true
+      privileged = true
       portMappings = [
         {
           containerPort = 8080
