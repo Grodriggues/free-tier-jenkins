@@ -13,6 +13,12 @@ resource "aws_ecs_task_definition" "service" {
       memory     = 512
       essential  = true
       privileged = true
+      mountPoints = [
+        {
+          "sourceVolume" : "jenkins_home",
+          "containerPath" : "/var/jenkins_home"
+        }
+      ],
       portMappings = [
         {
           containerPort = 8080
@@ -28,8 +34,11 @@ resource "aws_ecs_task_definition" "service" {
 
   volume {
     name      = "jenkins_home"
-    host_path = "/var/jenkins_home"
   }
+
+
+
+
 }
 
 resource "aws_ecs_service" "mongo" {
